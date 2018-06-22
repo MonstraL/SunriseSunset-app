@@ -11,7 +11,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -32,9 +31,6 @@ public class SunInformationActivity extends AppCompatActivity implements OnConne
     private static final String TAG = "SunriseSunset";
     private SunriseSunsetAPI sunriseSunsetAPI;
     private GoogleApiClient mGoogleApiClient;
-
-    private EditText citySearchField;
-    private LinearLayout searchLayout;
 
     public void placeFinder() {
         PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment)
@@ -59,7 +55,7 @@ public class SunInformationActivity extends AppCompatActivity implements OnConne
             }
         });
     }
-    
+
     private void setSunInfo(Place place){
         sunriseSunsetAPI.setLat(place.getLatLng().latitude);
         sunriseSunsetAPI.setLng(place.getLatLng().longitude);
@@ -91,14 +87,12 @@ public class SunInformationActivity extends AppCompatActivity implements OnConne
             public void onResult(PlaceLikelihoodBuffer placeLikelihoods) {
                 ((EditText)findViewById(R.id.place_autocomplete_search_input)).setText(placeLikelihoods.get(0).getPlace().getAddress());
                 setSunInfo(placeLikelihoods.get(0).getPlace());
+
                 placeLikelihoods.release();
             }
         });
-
         progressDialog.dismiss();
-
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,7 +118,6 @@ public class SunInformationActivity extends AppCompatActivity implements OnConne
                 setCurrentAddress();
             }
         });
-
     }
 
     @Override
