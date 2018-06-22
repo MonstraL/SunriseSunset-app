@@ -53,13 +53,22 @@
             app:srcCompat="@drawable/sunset_icon" />
 
         <TextView
-            android:id="@+id/sunsetRise"
+            android:id="@+id/sunsetText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textColor="#060606"
             android:textSize="25sp"
             android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/currentLocationButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@android:color/transparent"
+            android:text="@string/current_location"
+            android:textSize="20sp" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

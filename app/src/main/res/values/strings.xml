@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SunriseSunset</string>
+    <string name="current_location">Current location</string>
 </resources>

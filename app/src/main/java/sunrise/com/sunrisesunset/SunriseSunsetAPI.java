@@ -57,7 +57,6 @@ public class SunriseSunsetAPI {
     }
 
     private void setRequestURL(){
-        System.out.println(lat + "  " + lng);
         requestURL = baseURL+"lat="+lat+"&lng="+lng+"&date=today";
     }
 
@@ -101,5 +100,13 @@ public class SunriseSunsetAPI {
 
         // Add JsonObjectRequest to the RequestQueue
         requestQueue.add(jsonObjectRequest);
+    }
+
+    public String getSunrise() {
+        return sunrise;
+    }
+
+    public String getSunset() {
+        return sunset;
     }
 }
